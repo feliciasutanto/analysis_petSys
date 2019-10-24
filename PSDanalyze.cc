@@ -110,7 +110,7 @@ void PSDanalyze::Loop(string fileName, PSDhisto histos, PSDequalizer myEqual)
         //determine x and y
         xpos = int(chNum) / 8 ; //multipication factor
         ypos = int(chNum) % 8 ; //remiander
-        //if(SipmNum==1){xpos = 7-xpos;} //mirrored one y axis because SiPM B is mirrored of SiPM A
+        if(SipmNum==1){xpos = 7-xpos;} //mirrored one y axis because SiPM B is mirrored of SiPM A
         
         if(SipmNum==0){histos.fillPos0(double(xpos),double(ypos));}
         else{histos.fillPos1(double(xpos),double(ypos));}
